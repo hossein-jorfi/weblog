@@ -1,4 +1,6 @@
-import * as React from 'react';
+import React from 'react';
+
+// mui
 import BookIcon from '@mui/icons-material/Book';
 import { Container, AppBar, Toolbar, Typography } from '@mui/material';
 
