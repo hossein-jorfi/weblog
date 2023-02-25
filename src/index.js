@@ -11,7 +11,7 @@ import theme from './mui/theme'
 // Apollo
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 const clinet = new ApolloClient({
-     uri: 'https://api-us-east-1-shared-usea1-02.hygraph.com/v2/clegjnd110sej01t3202uh15w/master',
+     uri: process.env.REACT_APP_GRAPHCMS_URI,
      cache: new InMemoryCache()
 })
 
