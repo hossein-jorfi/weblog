@@ -19,4 +19,17 @@ const GET_BLOG_DATA = gql`
 }
 `
 
-export { GET_BLOG_DATA }
+const GET_AUTHORS_DATA = gql`
+     query  {
+          authors {
+               id
+               name
+               slug
+               avatar {
+                    url
+               }
+          }
+     }   
+`
+
+export { GET_BLOG_DATA, GET_AUTHORS_DATA }

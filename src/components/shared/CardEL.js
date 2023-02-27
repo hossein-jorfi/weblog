@@ -48,7 +48,7 @@ const CardEl = ({ data }) => {
                               </Avatar>
                          }
                          title={
-                              <Typography component='p' variant='p' color='text.primary' fontWeight='500'>
+                              <Typography component='p' variant='p' color='text.secondary' fontWeight='500'>
                                    {name}
                               </Typography>
                          }
@@ -62,7 +62,7 @@ const CardEl = ({ data }) => {
                     >
                     </CardMedia>
                     <CardContent>
-                         <Typography component='h3' variant="p" color="text.secondary" fontWeight='600' >
+                         <Typography component='h3' variant="p"  fontWeight='600' >
                               {shorter(title)}
                               {/* {(title)} */}
                          </Typography>
