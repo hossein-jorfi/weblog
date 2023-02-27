@@ -18,8 +18,12 @@ const Blog = () => {
      if (error) return <h4>Error</h4>
      return (
           <Grid container spacing={2}>
+               {/* <Grid xs={12} sm={6} lg={4}> */}
                {
-                    data.posts.map(item => <CardEL key={item.id} data={item} />)
+                    data.posts.map(item =>
+                         <Grid key={item.id} xs={12} sm={6} lg={4}>
+                              <CardEL {...item} />
+                         </Grid>)
                }
           </Grid>
      );

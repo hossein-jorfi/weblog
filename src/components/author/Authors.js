@@ -17,8 +17,6 @@ const Authors = () => {
 
      if (loading) return <h4>Loading...</h4>
      if (error) return <h4>error...</h4>
-     console.log(data);
-
      return (
           <Grid container sx={{
                borderRadius: 4,
