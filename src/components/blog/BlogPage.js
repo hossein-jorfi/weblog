@@ -7,6 +7,9 @@ import { useParams } from 'react-router-dom';
 import { GET_POST_DATA } from '../../graphql/queries';
 import { useQuery } from '@apollo/client';
 
+// Components
+import Loading from '../shared/Loading';
+
 const BlogPage = () => {
 
      const slug = useParams().slug
@@ -16,7 +19,7 @@ const BlogPage = () => {
           }
      })
 
-     if (loading) return <h4>Loading..</h4>
+     if (loading) return <Loading />
      if (error) return <h4>Error</h4>
      console.log(data);
      return (

@@ -13,6 +13,7 @@ import { Container, Avatar, Typography } from '@mui/material';
 
 // Components
 import CardEl from '../shared/CardEL';
+import Loading from '../shared/Loading';
 
 const AuthorPage = () => {
 
@@ -23,12 +24,12 @@ const AuthorPage = () => {
      })
 
 
-     if (loading) return <h4>Loading..</h4>
+     if (loading) return <Loading />
      if (error) return <h4>Error</h4>
      const { author: { avatar, name, description, field, posts } } = data
      return (
-          <Container>
-               <Grid container mt={10}>
+          <Container sx={{minHeight:'90vh'}}>
+               <Grid container mt={10} >
                     <Grid xs={12} display='flex' flexDirection='column' alignItems='center'>
                          <Avatar sx={{ width: '250px', height: '250px' }} src={avatar.url} />
                          <Typography component='h3' variant='h5' fontWeight='700'>{name}</Typography>

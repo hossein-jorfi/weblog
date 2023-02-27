@@ -11,11 +11,14 @@ import { Divider, Avatar, Typography } from '@mui/material';
 // Router
 import { Link } from 'react-router-dom';
 
+// Components
+import Loading from '../shared/Loading';
+
 const Authors = () => {
 
      const { loading, data, error } = useQuery(GET_AUTHORS_DATA)
 
-     if (loading) return <h4>Loading...</h4>
+     if (loading) return <Loading />
      if (error) return <h4>error...</h4>
      return (
           <Grid container sx={{
