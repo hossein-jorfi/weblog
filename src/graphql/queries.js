@@ -60,10 +60,18 @@ const GET_AUTHOR_DATA = gql`
 const GET_POST_DATA = gql`
      query getPostData($slug: String!) {
           post(where: {slug: $slug}) {
+               author {
+                    avatar {
+                         url
+                    }
+                    name
+                    field
+                    slug
+               }
+               title     
                coverPhoto {
                     url
                }
-               title     
                content {
                     html
                }
