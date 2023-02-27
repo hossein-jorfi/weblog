@@ -8,6 +8,7 @@ const GET_BLOG_DATA = gql`
                title
           author {
                name
+               slug
                avatar {
                     url
                }

@@ -8,6 +8,9 @@ import './styles/index.css'
 import { ThemeProvider } from '@mui/material';
 import theme from './mui/theme'
 
+// Router
+import { BrowserRouter } from 'react-router-dom';
+
 // Apollo
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 const clinet = new ApolloClient({
@@ -19,7 +22,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
      <ApolloProvider client={clinet}>
           <ThemeProvider theme={theme}>
-               <App />
+               <BrowserRouter>
+                    <App />
+               </BrowserRouter>
           </ThemeProvider>
      </ApolloProvider>
 );

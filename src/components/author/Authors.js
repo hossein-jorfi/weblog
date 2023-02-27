@@ -6,9 +6,10 @@ import { useQuery } from '@apollo/client';
 
 // MUI
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
-
 import { Divider, Avatar, Typography } from '@mui/material';
-import { Padding } from '@mui/icons-material';
+
+// Router
+import { Link } from 'react-router-dom';
 
 const Authors = () => {
 
@@ -29,14 +30,14 @@ const Authors = () => {
                     return (
                          <React.Fragment key={item.id}>
                               <Grid xs={12}>
-                                   <a href={`/authors/${item.slug}`} style={{
+                                   <Link to={`/authors/${item.slug}`} style={{
                                         display: 'flex', alignItems: 'center', textDecoration: 'none'
                                    }} >
                                         <Avatar src={item.avatar.url} sx={{ marginLeft: 2 }} />
                                         <Typography component='p' variant='p' color='text.secondary' fontWeight={500}>
                                              {item.name}
                                         </Typography>
-                                   </a>
+                                   </Link>
                               </Grid>
                               {
                                    index !== data.authors.length - 1 && (
