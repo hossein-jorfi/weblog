@@ -4,11 +4,50 @@ import React, { useState } from 'react';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import { Typography, TextField, Button } from '@mui/material';
 
+// GraphQL
+import { SEND_COMMENT } from '../../graphql/mutation';
+import { useMutation } from '@apollo/client';
+
+// Toastify
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const CommentForm = ({ slug }) => {
 
      const [name, setName] = useState('')
      const [email, setEmail] = useState('')
      const [text, setText] = useState('')
+     const [flag, setFlag] = useState(false)
+
+
+     const [sendComment, { loading, data }] = useMutation(SEND_COMMENT, {
+          variables: { name, email, text, slug }
+     })
+
+     
+
+     const warning = () => toast.warn("لطفا اطلاعات را وارد کنید", {
+          position: "top-center"
+     })
+     const success = () => toast.success("کامنت ارسال شد و منتظر تایید میباشد", {
+          position: "top-center"
+     })
+     const submitHandler = () => {
+          if (name && email && text) {
+               sendComment()
+               setFlag(true)
+               setName('')
+               setEmail('')
+               setText('')
+          } else {
+               warning()
+          }
+     }
+
+     if (data && flag) {
+          success()
+          setFlag(false)
+     }
 
      return (
           <Grid container sx={{
@@ -55,8 +94,14 @@ const CommentForm = ({ slug }) => {
                     />
                </Grid>
                <Grid xs={12} mx={2} my={1}>
-                    <Button variant='contained'>ارسال</Button>
+                    {
+                         loading ?
+                              <Button variant='contained' disabled>در حال ارسال...</Button>
+                              :
+                              <Button onClick={submitHandler} variant='contained'>ارسال</Button>
+                    }
                </Grid>
+               <ToastContainer />
           </Grid>
      );
 };

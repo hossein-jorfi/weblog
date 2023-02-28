@@ -10,6 +10,7 @@ import { useQuery } from '@apollo/client';
 // Components
 import Loading from '../shared/Loading';
 import CommentForm from '../comment/CommentForm';
+import Comments from '../comment/Comments';
 
 // MUI
 import { Avatar, Container, Typography } from '@mui/material';
@@ -71,6 +72,9 @@ const BlogPage = () => {
                     </Grid>
                     <Grid xs={12}>
                          <CommentForm slug={slug} />
+                    </Grid>
+                    <Grid xs={12}>
+                         <Comments slug={slug} />
                     </Grid>
                </Grid>
           </Container>

@@ -80,4 +80,14 @@ const GET_POST_DATA = gql`
 
 `
 
-export { GET_BLOG_DATA, GET_AUTHORS_DATA, GET_AUTHOR_DATA, GET_POST_DATA }
+const GET_POST_COMMENTS = gql`
+     query getPostCommets($slug: String!) {
+          comments(where: { post: { slug: $slug } }) {
+               id
+               name
+               text
+          }
+     }
+`
+
+export { GET_BLOG_DATA, GET_AUTHORS_DATA, GET_AUTHOR_DATA, GET_POST_DATA, GET_POST_COMMENTS }
