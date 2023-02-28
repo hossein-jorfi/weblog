@@ -11,7 +11,7 @@ const Header = () => {
      return (
           <AppBar position="sticky">
                <Container maxWidth="lg">
-                    <Toolbar>
+                    <Toolbar style={{ padding: 0 }}>
                          <Typography variant="h5" component="h1" fontWeight="700" sx={{ flexGrow: 1 }}>
                               <Link to='/' style={{ textDecoration: 'none', color: '#fff' }}>
                                    وبلاگ
