@@ -24,8 +24,6 @@ const CommentForm = ({ slug }) => {
           variables: { name, email, text, slug }
      })
 
-     
-
      const warning = () => toast.warn("لطفا اطلاعات را وارد کنید", {
           position: "top-center"
      })

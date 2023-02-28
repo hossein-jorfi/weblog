@@ -17,9 +17,9 @@ const Footer = () => {
                     <Link
                          href="https://github.com/hossein-jorfi/"
                          underline='none'
-                         sx={{ letterSpacing: '3px' }}
+                         // sx={{ letterSpacing: '3px' }}
                     >
-                         Hossein Jorfi
+                         Hossein Jorfi | پروژه GraphQl
                     </Link>
                </Typography>
           </footer>
