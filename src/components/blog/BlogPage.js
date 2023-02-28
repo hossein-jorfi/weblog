@@ -9,12 +9,12 @@ import { useQuery } from '@apollo/client';
 
 // Components
 import Loading from '../shared/Loading';
+import CommentForm from '../comment/CommentForm';
 
 // MUI
 import { Avatar, Container, Typography } from '@mui/material';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { padding } from '@mui/system';
 
 const BlogPage = () => {
 
@@ -30,7 +30,6 @@ const BlogPage = () => {
      if (loading) return <Loading />
      if (error) return <h4>Error</h4>
      const { author: { avatar, name, field }, content: { html }, coverPhoto: { url }, title } = data.post
-     console.log(data);
      return (
           <Container>
                <Grid container mt={9}>
@@ -69,6 +68,9 @@ const BlogPage = () => {
                     </Grid>
                     <Grid xs={12} mt={7}>
                          <div dangerouslySetInnerHTML={{ __html: html }}></div>
+                    </Grid>
+                    <Grid xs={12}>
+                         <CommentForm slug={slug} />
                     </Grid>
                </Grid>
           </Container>
